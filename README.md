@@ -37,7 +37,7 @@ The inferred closure is subsequently embedded within the reduced governing equat
 
 At assimilation time \(k\), the digital posterior is represented by an ensemble
 
-\[\pi_k(X_k,\xi)=p(X_k,\xi\mid\mathcal{D}_k),\qquad\left\{(X_k^{(n)},\xi^{(n)})\right\}_{n=1}^{N_e},\]
+$$\pi_k(X_k,\xi) = p(X_k,\xi\mid\mathcal{D}_k), \qquad \left\{(X_k^{(n)},\xi^{(n)})\right\}_{n=1}^{N_e}. $$
 
 where \(X_k\) denotes the resolved state and \(\xi\) denotes the learned closure coefficients.
 
