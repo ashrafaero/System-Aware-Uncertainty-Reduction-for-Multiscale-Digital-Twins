@@ -46,24 +46,13 @@ where $X_k$ denotes the resolved state and $\xi$ denotes the learned closure coe
 Each ensemble member is propagated according to
 
 $$
-X_{k+1}^{-,(n)}
-=
-\mathcal{F}_k
-\left(
-X_k^{+,(n)},\xi_k^{(n)}
-\right)
-+
-w_k^{(n)},
+X_{k+1}^{-,(n)} = \mathcal{F}_k \( X_k^{+,(n)},\xi_k^{(n)} \) + w_k^{(n)},
 $$
 
 while observations satisfy
 
 $$
-y_{k+1}
-=
-H_{k+1}X_{k+1}
-+
-v_{k+1}.
+y_{k+1} = H_{k+1}X_{k+1} + v_{k+1}.
 $$
 
 The EnKF then performs a sequential analysis update. Depending on the experiment, the closure coefficients can either remain fixed at their offline values or be included in the augmented state for joint state–parameter updating.
