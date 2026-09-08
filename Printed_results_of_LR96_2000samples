@@ -1,0 +1,185 @@
+#%% Checker:
+
+========================================================================
+TWO-LEVEL LORENZ-96: INDEPENDENT SYSTEM CHECK
+========================================================================
+
+Physical parameters
+-------------------
+K = 36
+J = 10
+F = 10
+h = 1.0
+b = 10.0
+c = 10.0
+hc/b = 1.0
+dt = 0.0005
+t_end = 40.0
+seed = 10
+
+Solving the full two-level system...
+Simulation completed.
+
+========================================================================
+1. NUMERICAL / PHYSICAL SANITY CHECKS
+========================================================================
+
+Time shape:       (80000,)
+Slow-state shape: (80000, 36)
+Fast-state shape: (80000, 10, 36)
+Closure shape:    (80000, 36)
+
+Finite-value check
+------------------
+X finite: True
+Y finite: True
+G finite: True
+PASS: No NaN or Inf values detected.
+
+Slow-state statistics
+---------------------
+Minimum: -7.524451
+Maximum:  12.821040
+Mean:     2.563553
+Std:      3.591100
+
+Fast-state statistics
+---------------------
+Minimum: -1.177369
+Maximum:  1.679093
+Mean:     0.080160
+Std:      0.228704
+
+True closure statistics
+-----------------------
+Minimum: -4.174092
+Maximum:  8.686807
+Mean:     0.801598
+Std:      1.340731
+
+Fast-variable spread
+--------------------
+Initial: 1.804702e-03
+Final:   1.576181e-01
+Mean:    1.455112e-01
+PASS: Fast variables contain non-trivial independent dynamics.
+
+Closure identity check
+----------------------
+max |G_true - sum_j(Y)| = 0.000000e+00
+PASS: Exact closure definition is internally consistent.
+
+========================================================================
+2. CLOSURE RECOVERY FROM RESOLVED STATE
+========================================================================
+
+Gradient recovery: G_recovered vs G_true
+----------------------------------------
+RMSE:        0.000151
+NRMSE(std):  0.000113
+R^2:         1.000000
+Correlation: 1.000000
+
+Savitzky-Golay recovery: G_recovered vs G_true
+----------------------------------------------
+RMSE:        0.000777
+NRMSE(std):  0.000580
+R^2:         1.000000
+Correlation: 1.000000
+
+========================================================================
+3. X -> G IDENTIFIABILITY / INFERENCE CHECK
+========================================================================
+
+Training snapshots used: 2380
+Testing snapshots:       20400
+
+local-linear: independent X -> G prediction
+-------------------------------------------
+RMSE:        0.785762
+NRMSE(std):  0.590667
+R^2:         0.651113
+Correlation: 0.807155
+
+local-quadratic: independent X -> G prediction
+----------------------------------------------
+RMSE:        0.707478
+NRMSE(std):  0.531820
+R^2:         0.717167
+Correlation: 0.847017
+
+r1-linear: independent X -> G prediction
+----------------------------------------
+RMSE:        0.767697
+NRMSE(std):  0.577087
+R^2:         0.666970
+Correlation: 0.816895
+
+r1-quadratic: independent X -> G prediction
+-------------------------------------------
+RMSE:        0.688869
+NRMSE(std):  0.517831
+R^2:         0.731851
+Correlation: 0.855718
+
+r2-linear: independent X -> G prediction
+----------------------------------------
+RMSE:        0.757301
+NRMSE(std):  0.569273
+R^2:         0.675928
+Correlation: 0.822370
+
+r2-quadratic: independent X -> G prediction
+-------------------------------------------
+RMSE:        0.665640
+NRMSE(std):  0.500370
+R^2:         0.749630
+Correlation: 0.865988
+
+========================================================================
+4. AUTOMATIC INTERPRETATION
+========================================================================
+
+Best deterministic feature model: r2-quadratic
+Test R^2:                         0.7496
+Test correlation:                 0.8660
+Test NRMSE:                       0.5004
+
+PASS: G can be accurately recovered from the resolved trajectory X(t).
+MODERATE: The closure is learnable from X, but an exact instantaneous match should not be expected from the current deterministic feature set.
+
+
+#%% MCMC run
+SYSTEM: Two-level Lorenz-96
+
+Closure extraction: recovered G vs hidden true G
+{'rmse': 0.0007771524570920721, 'nrmse_std': 0.0005796483109654997, 'mae': 0.0001751923049785739, 'r2': 0.9999996640078356, 'corr': 0.9999998323991459, 'bias': -5.922913338448197e-08, 'normalized_bias': -4.417674654819732e-08}
+Resolved-state reconstruction from prescribed recovered G
+{'trajectory_rmse': 5.0044270599362335, 'mean_stat_error': 0.38740428672566174, 'std_stat_error': 0.36386237149587086}
+
+FITTING: local-linear
+Sample: 100%|██████████| 2200/2200 [03:11, 11.47it/s, step size=1.11e-01, acc. prob=0.912]
+  MCMC finished
+  posterior_closure_mean finished in 3.99 s
+  integrate_learned_closure finished in 3.36 s
+  evaluate_closure_model finished in 29.03 s
+  truth closure metrics finished in 0.06 s
+  COMPLETED MODEL: local-linear
+
+FITTING: local-quadratic
+Sample: 100%|██████████| 2200/2200 [04:22,  8.39it/s, step size=9.31e-02, acc. prob=0.903]
+  MCMC finished
+  posterior_closure_mean finished in 5.10 s
+  integrate_learned_closure finished in 3.97 s
+  evaluate_closure_model finished in 29.86 s
+  truth closure metrics finished in 0.05 s
+  COMPLETED MODEL: local-quadratic
+
+FITTING: r1-linear
+Sample: 100%|██████████| 2200/2200 [06:50,  5.36it/s, step size=3.07e-03, acc. prob=0.927]  MCMC finished
+
+  posterior_closure_mean finished in 4.72 s
+  integrate_learned_closure finished in 3.50 s
+  evaluate_closure_model finished in 30.00 s
+  truth closure metrics finished in 0.05 s
+  COMPLETED MODEL: r1-linear

@@ -1,0 +1,58 @@
+SYSTEM: Two-level Lorenz-96
+
+
+TRAINING-REALIZATION METRICS
+model                  NRMSE_G      R2_G    corr_G   coverage  T_forecast    PDF_WD   ACF_RMSE   PSD_RMSE
+---------------------------------------------------------------------------------------------------------
+local-linear             0.600     0.635     0.795      0.945       1.090     0.142      0.021      0.128
+local-quadratic          0.525     0.715     0.845      0.950       1.275     0.111      0.019      0.129
+r1-linear                0.585     0.650     0.810      0.948       1.160     0.139      0.028      0.127
+r1-quadratic             0.512     0.730     0.855      0.950       1.290     0.190      0.019      0.131
+r2-linear                0.580     0.660     0.815      0.944       1.160     0.142      0.025      0.129
+r2-quadratic             0.495     0.750     0.865      0.947       1.310     0.150      0.017      0.126
+
+
+INDEPENDENT-TRAJECTORY GENERALIZATION (NO REFIT)
+model                  NRMSE_G      R2_G    corr_G   coverage  T_forecast    PDF_WD   ACF_RMSE   PSD_RMSE
+---------------------------------------------------------------------------------------------------------
+local-linear             0.600     0.635     0.795      0.945       1.430     0.134      0.015      0.117
+local-quadratic          0.525     0.720     0.845      0.950       1.400     0.104      0.025      0.116
+r1-linear                0.585     0.650     0.810      0.948       1.410     0.099      0.021      0.118
+r1-quadratic             0.512     0.735     0.855      0.950       1.420     0.125      0.025      0.118
+r2-linear                0.580     0.660     0.815      0.944       1.390     0.093      0.007      0.121
+r2-quadratic             0.495     0.750     0.865      0.947       1.380     0.091      0.039      0.117
+
+
+#### Plotting
+Results loaded from: closure_analysis_results_lorenz96.pkl
+
+Resolved-state reconstruction RMSE:
+
+Resolved-state reconstruction RMSE:
+  local-linear         4.865135e+00
+  local-quadratic      4.817093e+00
+  r1-linear            4.987415e+00
+  r1-quadratic         4.499278e+00
+  r2-linear            5.184615e+00
+  r2-quadratic         5.088063e+00
+
+Training-selected Lorenz-96 closure: r1-quadratic (state-reconstruction RMSE=4.499278e+00)
+Integrator dt: 0.0005
+Number of integration steps: 80000
+Number of stored points: 80000
+Stored-data dt: 0.0005
+
+
+
+
+### Digital-Twin
+Digital-twin results saved to: digital_twin_results_lorenz96.pkl
+Training-selected closure model: r1-quadratic
+Mean free-run RMSE: 4.417321
+Mean forecast RMSE: 0.254414
+Mean analysis RMSE: 0.233799
+Mean analysis coverage: 0.869
+Mean closure-analysis RMSE: 0.665647
+
+
+

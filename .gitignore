@@ -1,0 +1,34 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python environments
+venv/
+env/
+.venv/
+
+# Generated binary results
+*.pkl
+
+# Generated results
+results/
+*/results/
+
+oldercodes/
+other_files/
