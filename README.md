@@ -35,15 +35,21 @@ The closure models are assessed using both *a priori* and *a posteriori* diagnos
 
 The inferred closure is subsequently embedded within the reduced governing equations. The offline posterior supplies uncertainty in the closure coefficients to the ensemble representation used by the digital twin.
 
-At assimilation time \(k\), the digital posterior is represented by an ensemble
+At assimilation time $k$, the digital posterior is represented by an ensemble
 
-$$\pi_k(X_k,\xi) = p(X_k,\xi\mid\mathcal{D}_k), \qquad \left\{(X_k^{(n)},\xi^{(n)})\right\}_{n=1}^{N_e}. $$
+$$
+\pi_k(X_k,\xi)
+=
+p(X_k,\xi\mid\mathcal{D}_k),
+\qquad
+\left\{(X_k^{(n)},\xi^{(n)})\right\}_{n=1}^{N_e},
+$$
 
-where \(X_k\) denotes the resolved state and \(\xi\) denotes the learned closure coefficients.
+where $X_k$ denotes the resolved state and $\xi$ denotes the learned closure coefficients.
 
 Each ensemble member is propagated according to
 
-\[
+$$
 X_{k+1}^{-,(n)}
 =
 \mathcal{F}_k
@@ -52,17 +58,17 @@ X_k^{+,(n)},\xi_k^{(n)}
 \right)
 +
 w_k^{(n)},
-\]
+$$
 
 while observations satisfy
 
-\[
+$$
 y_{k+1}
 =
 H_{k+1}X_{k+1}
 +
 v_{k+1}.
-\]
+$$
 
 The EnKF then performs a sequential analysis update. Depending on the experiment, the closure coefficients can either remain fixed at their offline values or be included in the augmented state for joint state–parameter updating.
 
@@ -87,8 +93,8 @@ The second benchmark introduces nonlinear chaotic dynamics and partial observabi
 
 Candidate hierarchies include:
 
-- \(x\)-only linear and quadratic representations;
-- \((x,y)\) linear and quadratic representations.
+- $x$-only linear and quadratic representations;
+- $(x,y)$ linear and quadratic representations.
 
 For online experiments, the EnKF assimilates only the prescribed resolved measurements. The hidden Lorenz variable and exact unresolved forcing are retained for retrospective assessment rather than being used by the filter.
 
@@ -99,8 +105,8 @@ The third benchmark considers a spatially distributed multiscale chaotic system 
 Candidate closure hierarchies progressively increase the spatial information supplied to the closure:
 
 - local linear and quadratic models;
-- \(\pm1\)-neighbor linear and quadratic models;
-- \(\pm2\)-neighbor linear and quadratic models.
+- $\pm1$-neighbor linear and quadratic models;
+- $\pm2$-neighbor linear and quadratic models.
 
 This hierarchy preserves a common inference methodology while increasing the information available to the closure in a physically meaningful manner.
 
@@ -236,7 +242,7 @@ The Lorenz–96 experiment can use partial observations of the resolved slow var
 The framework is designed to assess more than pointwise closure fitting. Depending on the benchmark and analysis stage, diagnostics include:
 
 - normalized root-mean-square error (NRMSE);
-- coefficient of determination (\(R^2\));
+- coefficient of determination ($R^2$);
 - correlation;
 - posterior credible-interval coverage;
 - autonomous forecast horizon;
