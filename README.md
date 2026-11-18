@@ -322,7 +322,7 @@ Citation details are provided below.
   number={2},
   pages={59},
   year={2026},
-  publisher={Springer}
+  publisher={Springer Nature}
 }
 ```
 
