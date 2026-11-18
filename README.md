@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the computational framework accompanying the manuscript **“Bayesian Closure Inference and Ensemble Data Assimilation for Uncertainty-Aware Digital Twins of Partially Observed Multiscale Systems.”**
+This repository contains the computational framework accompanying the manuscript **“Uncertainty-aware multiscale digital twins through Bayesian closure and data assimilation.”**
 
 The framework addresses predictive modeling of multiscale dynamical systems when part of the system dynamics is unresolved or unobserved. It combines two complementary components:
 
@@ -311,15 +311,18 @@ This distinction is important when interpreting digital-twin performance under p
 
 ## Citation
 
-If you use this repository in academic work, please cite the accompanying manuscript. Citation information will be added following publication.
+Citation details are provided below.
 
 ```bibtex
-@article{Kassem2026System,
-  title   = {System-Aware Uncertainty Reduction for Multiscale Digital Twins:
-From Bayesian Closure Inference to Ensemble Data Assimilation},
-  author  = {Kassem, Ashraf and Kara, Kursat, and San, Omer},
-  year    = {2026},
-  note    = {Manuscript in preparation}
+@article{kassem2026uncertainty,
+  title={Uncertainty-aware multiscale digital twins through Bayesian closure and data assimilation},
+  author={Kassem, Ashraf and Kara, Kursat and San, Omer},
+  journal={Machine Learning for Computational Science and Engineering},
+  volume={2},
+  number={2},
+  pages={59},
+  year={2026},
+  publisher={Springer}
 }
 ```
 
